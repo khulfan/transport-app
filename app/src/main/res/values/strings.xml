@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Institute Transport</string>
+    
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="loading">Loading…</string>
+    <string name="error_occurred">An error occurred</string>
+    
+    <!-- Auth -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="select_role">Select Role</string>
+    <string name="driver">Driver</string>
+    <string name="passenger">Passenger</string>
+    <string name="logout">Logout</string>
+    <string name="forgot_password">Forgot Password?</string>
+    
+    <!-- Driver -->
+    <string name="my_routes">My Routes</string>
+    <string name="add_route">Add Route</string>
+    <string name="route_name">Route Name</string>
+    <string name="add_stop">Add Stop</string>
+    <string name="stop_name">Stop Name</string>
+    <string name="select_location">Select Location on Map</string>
+    <string name="start_trip">Start Trip</string>
+    <string name="end_trip">End Trip</string>
+    <string name="trip_active">Trip Active</string>
+    <string name="trip_inactive">Trip Inactive</string>
+    <string name="tracking_location">Tracking Location…</string>
+    <string name="stops_added">%d stops added</string>
+    
+    <!-- Passenger -->
+    <string name="select_route">Select Route</string>
+    <string name="bus_location">Bus Location</string>
+    <string name="upcoming_stops">Upcoming Stops</string>
+    <string name="arrived">Arrived</string>
+    <string name="pending">Pending</string>
+    <string name="no_active_trip">No active trip on this route</string>
+    <string name="waiting_for_bus">Waiting for bus…</string>
+    
+    <!-- Notifications -->
+    <string name="location_channel_name">Location Tracking</string>
+    <string name="location_channel_desc">Continuous location tracking for bus route</string>
+    <string name="tracking_notification_title">Tracking Bus Location</string>
+    <string name="tracking_notification_text">Route: %s</string>
+    <string name="notification_channel_name">Bus Notifications</string>
+    <string name="notification_channel_desc">Notifications for bus arrivals</string>
+    
+    <!-- Messages -->
+    <string name="bus_arrived_at_stop">🚌 Bus has arrived at %s</string>
+    <string name="bus_arriving_soon">Bus arriving soon at your stop</string>
+    <string name="route_created">Route created successfully</string>
+    <string name="route_updated">Route updated successfully</string>
+    <string name="trip_started">Trip started successfully</string>
+    <string name="trip_ended">Trip ended successfully</string>
+    
+    <!-- Errors -->
+    <string name="error_empty_field">This field cannot be empty</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_weak_password">Password must be at least 6 characters</string>
+    <string name="error_passwords_dont_match">Passwords don\'t match</string>
+    <string name="error_login_failed">Login failed. Please check credentials.</string>
+    <string name="error_location_permission">Location permission required</string>
+    <string name="error_no_route_selected">Please select a route</string>
+    
+    <!-- Permissions -->
+    <string name="permission_location_rationale">Location permission is needed to track the bus in real-time</string>
+    <string name="permission_background_location_rationale">Background location is needed to track the bus even when the app is closed</string>
+    <string name="permission_notification_rationale">Notification permission is needed to alert you about bus arrivals</string>
+    
+    <!-- Map -->
+    <string name="current_location">Current Location</string>
+    <string name="bus_marker_title">Bus</string>
+    <string name="stop_marker_title">Stop %d: %s</string>
+    
+    <!-- WhatsApp -->
+    <string name="whatsapp_message_template">🚌 *Bus Alert*\n\nThe bus on route *%s* has arrived at *%s*.\n\nPlease be ready!</string>
+</resources>

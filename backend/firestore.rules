@@ -1,0 +1,69 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user is owner
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+    
+    // Helper function to get user data
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    // Helper function to check if user is driver
+    function isDriver() {
+      return isSignedIn() && getUserData().role == 'DRIVER';
+    }
+    
+    // Helper function to check if user is passenger
+    function isPassenger() {
+      return isSignedIn() && getUserData().role == 'PASSENGER';
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Users can read their own data
+      allow read: if isSignedIn() && isOwner(userId);
+      
+      // Users can create their own document during registration
+      allow create: if isSignedIn() && isOwner(userId);
+      
+      // Users can update their own data
+      allow update: if isSignedIn() && isOwner(userId);
+      
+      // No deletion allowed (admins only - not implemented yet)
+      allow delete: if false;
+    }
+    
+    // Routes collection
+    match /routes/{routeId} {
+      // Everyone can read routes (drivers and passengers)
+      allow read: if isSignedIn();
+      
+      // Only drivers can create routes
+      allow create: if isDriver() && request.resource.data.driverId == request.auth.uid;
+      
+      // Only the route owner (driver) can update
+      allow update: if isDriver() && resource.data.driverId == request.auth.uid;
+      
+      // Only the route owner can delete
+      allow delete: if isDriver() && resource.data.driverId == request.auth.uid;
+    }
+    
+    // Bus locations collection
+    match /busLocations/{locationId} {
+      // Everyone can read bus locations
+      allow read: if isSignedIn();
+      
+      // Only drivers can write location data
+      allow write: if isDriver();
+    }
+  }
+}

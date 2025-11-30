@@ -1,0 +1,31 @@
+# Gradle files
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+.DS_Store
+
+# Google Services (Firebase)
+google-services.json
+
+# Local configuration
+local.properties
+
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Backup files
+*.bak
+
+# Log Files
+*.log
+
+# Node modules (for Firebase functions)
+backend/functions/node_modules/
+backend/functions/.runtimeconfig.json
+
+# Firebase cache
+.firebase/
